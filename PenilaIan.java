@@ -1,3 +1,3 @@
-public class PenilaIan {
+public class Penilaian {
     
 }
