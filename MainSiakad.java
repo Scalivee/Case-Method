@@ -56,5 +56,36 @@ public class MainSiakad {
                         p.tampilPenilaian();
                     }
                     break;
+                    case 4:
+                    System.out.println("\nData Penilaian:");
+                    for (int i = 0; i < dataPenilaian.length - 1; i++) {
+                        for (int j = 0; j < dataPenilaian.length - 1 - i; j++) {
+                            if (dataPenilaian[j].nilaiAkhir < dataPenilaian[j + 1].nilaiAkhir) {
+                                Penilaian temp = dataPenilaian[j];
+                                dataPenilaian[j] = dataPenilaian[j + 1];
+                                dataPenilaian[j + 1] = temp;
+                            }
+                        }
+                    }
+                
+                    for (Penilaian p : dataPenilaian) {
+                        p.tampilPenilaian();
+                    }
+                    break;
+                case 5:
+                    System.out.print("Masukkan NIM mahasiswa yang dicari: ");
+                    String cariNIM = sc.nextLine();
+                    boolean ditemukan = false;
+                    for (Mahasiswa mhs : daftarMahasiswa) {
+                        if (mhs.NIM.equals(cariNIM)) {
+                            System.out.println("Mahasiswa Ditemukan: NIM: " + mhs.NIM + " | Nama: " + mhs.nama + " | Prodi: " + mhs.prodi);
+                            ditemukan = true;
+                            break;
+                        }
+                    }
+                    if (!ditemukan) {
+                        System.out.println("Mahasiswa dengan NIM " + cariNIM + " tidak ditemukan.");
+                    }
+                    break;
     }
 }
