@@ -1,27 +1,27 @@
 import java.util.Scanner;
 
 public class MainSiakad {
-     public static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         Mahasiswa[] daftarMahasiswa = {
-            new Mahasiswa("22001", "Ali Rahman", "Informatika"),
-            new Mahasiswa("22002", "Budi Santoso", "Informatika"),
-            new Mahasiswa("22003", "Citra Dewi", "Sistem Informasi Bisnis")
+                new Mahasiswa("22001", "Ali Rahman", "Informatika"),
+                new Mahasiswa("22002", "Budi Santoso", "Informatika"),
+                new Mahasiswa("22003", "Citra Dewi", "Sistem Informasi Bisnis")
         };
 
         MataKuliah[] daftarMK = {
-            new MataKuliah("MK001", "Struktur Data", 3),
-            new MataKuliah("MK002", "Basis Data", 3),
-            new MataKuliah("MK003", "Desain Web", 3)
+                new MataKuliah("MK001", "Struktur Data", 3),
+                new MataKuliah("MK002", "Basis Data", 3),
+                new MataKuliah("MK003", "Desain Web", 3)
         };
 
         Penilaian[] dataPenilaian = {
-            new Penilaian(daftarMahasiswa[0], daftarMK[0], 80, 85, 90),
-            new Penilaian(daftarMahasiswa[0], daftarMK[1], 60, 75, 70),
-            new Penilaian(daftarMahasiswa[1], daftarMK[0], 75, 70, 80),
-            new Penilaian(daftarMahasiswa[2], daftarMK[1], 85, 90, 95),
-            new Penilaian(daftarMahasiswa[2], daftarMK[2], 80, 90, 65)
+                new Penilaian(daftarMahasiswa[0], daftarMK[0], 80, 85, 90),
+                new Penilaian(daftarMahasiswa[0], daftarMK[1], 60, 75, 70),
+                new Penilaian(daftarMahasiswa[1], daftarMK[0], 75, 70, 80),
+                new Penilaian(daftarMahasiswa[2], daftarMK[1], 85, 90, 95),
+                new Penilaian(daftarMahasiswa[2], daftarMK[2], 80, 90, 65)
         };
         int pilihan;
 
@@ -35,7 +35,7 @@ public class MainSiakad {
             System.out.println("0. Keluar");
             System.out.print("Pilih menu: ");
             pilihan = sc.nextInt();
-            sc.nextLine(); 
+            sc.nextLine();
 
             switch (pilihan) {
                 case 1:
@@ -56,7 +56,7 @@ public class MainSiakad {
                         p.tampilPenilaian();
                     }
                     break;
-                    case 4:
+                case 4:
                     System.out.println("\nData Penilaian:");
                     for (int i = 0; i < dataPenilaian.length - 1; i++) {
                         for (int j = 0; j < dataPenilaian.length - 1 - i; j++) {
@@ -67,7 +67,7 @@ public class MainSiakad {
                             }
                         }
                     }
-                
+
                     for (Penilaian p : dataPenilaian) {
                         p.tampilPenilaian();
                     }
@@ -78,7 +78,8 @@ public class MainSiakad {
                     boolean ditemukan = false;
                     for (Mahasiswa mhs : daftarMahasiswa) {
                         if (mhs.NIM.equals(cariNIM)) {
-                            System.out.println("Mahasiswa Ditemukan: NIM: " + mhs.NIM + " | Nama: " + mhs.nama + " | Prodi: " + mhs.prodi);
+                            System.out.println("Mahasiswa Ditemukan: NIM: " + mhs.NIM + " | Nama: " + mhs.nama
+                                    + " | Prodi: " + mhs.prodi);
                             ditemukan = true;
                             break;
                         }
@@ -87,5 +88,15 @@ public class MainSiakad {
                         System.out.println("Mahasiswa dengan NIM " + cariNIM + " tidak ditemukan.");
                     }
                     break;
+                case 0:
+                    System.out.println("Terima kasih!");
+                    break;
+                default:
+                    System.out.println("Pilihan tidak valid.");
+            }
+
+        } while (pilihan != 0);
+
+        sc.close();
     }
 }
