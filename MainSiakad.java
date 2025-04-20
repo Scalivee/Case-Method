@@ -11,7 +11,7 @@ public class MainSiakad {
         };
 
         MataKuliah[] daftarMK = {
-                new MataKuliah("MK001", "Struktur Data", 3),
+                new MataKuliah("MK001", "Struktur Data", 3), 
                 new MataKuliah("MK002", "Basis Data", 3),
                 new MataKuliah("MK003", "Desain Web", 3)
         };
@@ -26,7 +26,7 @@ public class MainSiakad {
         int pilihan;
 
         do {
-            System.out.println("\n=== MENU SISTEM AKADEMIK ===");
+            System.out.println("=== MENU SISTEM AKADEMIK ===");
             System.out.println("1. Tampilkan Daftar Mahasiswa");
             System.out.println("2. Tampilkan Daftar Mata Kuliah");
             System.out.println("3. Tampilkan Data Penilaian");
@@ -39,25 +39,25 @@ public class MainSiakad {
 
             switch (pilihan) {
                 case 1:
-                    System.out.println("\nDaftar Mahasiswa:");
+                    System.out.println("Daftar Mahasiswa:");
                     for (Mahasiswa mhs : daftarMahasiswa) {
                         mhs.tampilMahasiswa();
                     }
                     break;
                 case 2:
-                    System.out.println("\nDaftar Mata Kuliah:");
+                    System.out.println("Daftar Mata Kuliah:");
                     for (MataKuliah mk : daftarMK) {
                         mk.tampilMatakuliah();
                     }
                     break;
                 case 3:
-                    System.out.println("\nData Penilaian:");
+                    System.out.println("Data Penilaian:");
                     for (Penilaian p : dataPenilaian) {
                         p.tampilPenilaian();
                     }
                     break;
                 case 4:
-                    System.out.println("\nData Penilaian:");
+                    System.out.println("Data Penilaian:");
                     for (int i = 0; i < dataPenilaian.length - 1; i++) {
                         for (int j = 0; j < dataPenilaian.length - 1 - i; j++) {
                             if (dataPenilaian[j].nilaiAkhir < dataPenilaian[j + 1].nilaiAkhir) {
